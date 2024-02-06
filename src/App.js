@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import logo from './images/netflix-logo.png';
 import './App.css';
 import './Header.css'
 import './Home.css'
@@ -7,20 +7,34 @@ import movieImages from './movie-images';
 
 import { motion } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
+import MovieModal from './components/MovieModal';
 
 function App() {
   const Header = () => {
+
+    const [navbar, setNavBar] = useState(false);
+
+    const changeBackground = () => {
+
+      if(window.scrollY >= 70) {
+        setNavBar(true);
+      } else {
+        setNavBar(false);
+      }
+
+    };
+
+    window.addEventListener('scroll', changeBackground);
+
+
     return (
 
-      <header className="header">
+      <header className={navbar ? 'header active' : 'header'}>
+
+        <a href="#" className="logo"><img src={logo} width="15%" /></a>
 
         <div className="header_Nav">
 
-          <div className="header_logo">
-            NETFLIX
-          </div>{
-
-          }
           <a href="#">Home</a>
           <a href="#">TV Shows</a>
           <a href="#">Movies</a>
@@ -29,7 +43,7 @@ function App() {
           <a href="#">Browse by Languages</a>
         </div>
 
-        <div class="bx bx-menu" id="menu-icon"></div>
+        {/* <div class="bx bx-menu" id="menu-icon"></div> */}
 
       </header>
 
@@ -40,8 +54,11 @@ function App() {
 
     return (
       <div className="billboard-container">
-        <div className="item billboard bbmovie"></div>
-
+        <div className="billboard bbmovie"></div>
+        <div className="billboard-title">A Quiet Place</div>
+        <div className="billboard-description">
+        If they hear you, they hunt you. A family must live in silence to avoid mysterious creatures that hunt by sound. 
+        </div>
 
       </div>
 
@@ -53,7 +70,7 @@ function App() {
     const [width, setWidth] = useState(0);
     const movieSlider = useRef();
     useEffect(() => {
-      setWidth(1500);
+      setWidth(2500);
     }, []);
 
 
@@ -65,20 +82,24 @@ function App() {
           <motion.div ref={movieSlider} className="movie-scroller" whileTap={{ cursor: "grabbing" }}>
 
 
-            <motion.div drag="x" dragConstraints={{right: 0, left: -width}} className="movie-card-1">
+            <motion.div drag="x" dragConstraints={{
+              right: 25,
+              left: -width
+            }}
+              className="movie-card-1">
               {movieImages.map(image => {
                 return (
                   <motion.div className="poster" key={image}>
+
                     <img src={image} alt="movie-image" />
+                    <div style={{ position: 'relative', top: -90, left: 0, width: '100%', height: '100%'}}>
+                      <MovieModal />
+                    </div>
+
                   </motion.div>
                 );
               })}
             </motion.div>
-
-
-
-
-
 
           </motion.div>
 
@@ -86,9 +107,29 @@ function App() {
 
         <div className="section-title">
           <h2>Top 10 Movies in the U.S Today</h2>
-          <div className="movie-card-2">
-            <div className="movie-image"></div>
-          </div>
+          <motion.div ref={movieSlider} className="movie-scroller" whileTap={{ cursor: "grabbing" }}>
+
+
+<motion.div drag="x" dragConstraints={{
+  right: 25,
+  left: -width
+}}
+  className="movie-card-1">
+  {movieImages.map(image => {
+    return (
+      <motion.div className="poster" key={image}>
+
+        <img src={image} alt="movie-image" />
+        <div style={{ position: 'relative', top: -90, left: 0, width: '100%', height: '100%'}}>
+          <MovieModal />
+        </div>
+
+      </motion.div>
+    );
+  })}
+</motion.div>
+
+</motion.div>
         </div>
 
         <div className="section-title">
