@@ -1,0 +1,83 @@
+/* .App{
+
+    overflow: hidden;
+} */
+
+.content-container{
+    display: grid;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    /* background: rgb(24, 20, 20); */
+    
+    flex-wrap: wrap;
+    z-index: 1;
+    position: relative;
+    margin-top: -125px;
+
+}
+
+
+.section-title{
+    
+    
+    
+    height: 235px;
+    margin: 0 35px 0 0;
+    
+}
+
+
+
+
+.section-title h2{
+    font-size: 23px;
+    font-weight: bold;
+    margin: 1px 35px 5px 35px;
+    color: white;
+    font-family: 'poppins', sans-serif;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.74);
+
+}
+
+
+
+.movie-card-1{
+    display: flex;
+    min-height: 40rem;
+    width: 33%;
+
+}
+
+.poster{
+
+    /* background: whitesmoke; */
+    width: 45rem;
+    
+    height: 140px;
+    background-size: cover;
+    margin: 5px;
+    border-radius: 5px;
+
+}
+
+.poster img{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    pointer-events: none;
+    box-shadow: 0px -6px 43px 10px rgba(0,0,0,0.75);
+
+    
+
+}
+
+.movie-scroller{
+    height: 150px;
+    
+    cursor:grab;
+    overflow: hidden;
+}
+
+
