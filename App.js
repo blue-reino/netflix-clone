@@ -16,7 +16,7 @@ function App() {
 
     const changeBackground = () => {
 
-      if(window.scrollY >= 70) {
+      if (window.scrollY >= 70) {
         setNavBar(true);
       } else {
         setNavBar(false);
@@ -55,15 +55,20 @@ function App() {
     return (
       <div className="billboard-container">
         <div className="billboard bbmovie"></div>
-        <div className="billboard-title">A Quiet Place</div>
+        <div className="billboard-title billboard-logo"></div>
         <div className="billboard-description">
-        If they hear you, they hunt you. A family must live in silence to avoid mysterious creatures that hunt by sound. 
+          If they hear you, they hunt you. A family must live in silence to avoid mysterious creatures that hunt by sound.
         </div>
 
-        <button className = "billboard-play-btn">
-        <p><i class="ri-play-fill"></i>   </p>
-        Play  
-        </button> 
+        <button className="billboard-play-btn">
+          <p><i class="ri-play-fill"></i>   </p>
+          Play
+        </button>
+
+        <button className="billboard-info-btn">
+          <p><i class="ri-information-line"></i>   </p>
+          More Info
+        </button>
 
 
 
@@ -99,15 +104,30 @@ function App() {
                   <motion.div className="poster" key={image}>
 
                     <img src={image} alt="movie-image" />
-                    <div style={{ position: 'relative', top: -90, left: 0, width: '100%', height: '100%'}}>
+                    <div style={{ position: 'relative', top: -90, left: 0, width: '100%', height: '100%' }}>
+                      
+
+                      
+                      <div className="poster-behind">
+                      <img src={image} alt="movie-image" />
+                      <div style={{ position: 'relative', top: -90, left: 0, width: '100%', height: '100%' }}>
                       <MovieModal />
+                      </div>
+                      
+                      </div>
+                      
                     </div>
 
-                  </motion.div>
-                );
-              })}
-            </motion.div>
 
+                  </motion.div>
+
+                  
+
+                );
+
+              })}
+
+            </motion.div>
           </motion.div>
 
         </div>
@@ -117,26 +137,29 @@ function App() {
           <motion.div ref={movieSlider} className="movie-scroller" whileTap={{ cursor: "grabbing" }}>
 
 
-<motion.div drag="x" dragConstraints={{
-  right: 25,
-  left: -width
-}}
-  className="movie-card-1">
-  {movieImages.map(image => {
-    return (
-      <motion.div className="poster" key={image}>
+            <motion.div drag="x" dragConstraints={{
+              right: 25,
+              left: -width
+            }}
+              className="movie-card-1">
+              {movieImages.map(image => {
+                return (
+                  <motion.div className="poster" key={image}>
 
-        <img src={image} alt="movie-image" />
-        <div style={{ position: 'relative', top: -90, left: 0, width: '100%', height: '100%'}}>
-          <MovieModal />
-        </div>
+                    <img src={image} alt="movie-image" />
+                    <div style={{ position: 'relative', top: -90, left: 0, width: '100%', height: '100%' }}>
+                      <MovieModal />
+                      
+                    </div>
 
-      </motion.div>
-    );
-  })}
-</motion.div>
+                    
 
-</motion.div>
+                  </motion.div>
+                );
+              })}
+            </motion.div>
+
+          </motion.div>
         </div>
 
         <div className="section-title">
