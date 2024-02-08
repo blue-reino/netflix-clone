@@ -8,6 +8,7 @@ import movieImages from './movie-images';
 import { motion } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import MovieModal from './components/MovieModal';
+import BillboardVideo from './components/BillboardVideo';
 
 function App() {
   const Header = () => {
@@ -54,7 +55,9 @@ function App() {
 
     return (
       <div className="billboard-container">
-        <div className="billboard bbmovie"></div>
+        <div className="billboard">
+          <BillboardVideo/>
+        </div>
         <div className="billboard-title billboard-logo"></div>
         <div className="billboard-description">
           If they hear you, they hunt you. A family must live in silence to avoid mysterious creatures that hunt by sound.
