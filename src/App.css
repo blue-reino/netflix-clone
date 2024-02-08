@@ -33,7 +33,7 @@
   height: 25%;
   background-size: cover;
   position: absolute; /* Position the title absolutely within the .billboard-container */
-  top: 40%; /* Move the title 50% from the top of the .billboard-container */
+  top: 50%; /* Move the title 50% from the top of the .billboard-container */
   left: 20%; /* Move the title 50% from the left of the .billboard-container */
   transform: translate(-50%, -50%); /* Center the title both vertically and horizontally */
   text-shadow: 2px 1px 2px #000000;
@@ -53,7 +53,7 @@
   font-family: 'poppins', sans-serif;
   color: white;
   position: absolute; /* Position the title absolutely within the .billboard-container */
-  top: 55%; /* Move the title 50% from the top of the .billboard-container */
+  top: 65%; /* Move the title 50% from the top of the .billboard-container */
   left: 19%; /* Move the title 50% from the left of the .billboard-container */
   transform: translate(-50%, -50%); /* Center the title both vertically and horizontally */
   text-shadow: 2px 1px 2px #000000;
@@ -82,7 +82,7 @@
   height: 45px;
   border: none;
   border-radius: 5px;
-  top: 65%;
+  top: 75%;
   left: 2.5%;
   justify-content: center;
   align-items: center;
@@ -120,7 +120,7 @@
   height: 46px;
   border: none;
   border-radius: 5px;
-  top: 65%;
+  top: 75%;
   left: 11.8%;
   justify-content: center;
   align-items: center;
@@ -149,6 +149,20 @@
 
 }
 
+.video-player button {
+  color: white;
+  border-radius: 25px;
+  background-color:  rgba(60, 60, 60, 0.5);
+  width: 50px;
+  height: 50px;
+  border: 10px white;
+  font-size: 25px;
+
+}
+
+.video-player button:hover {
+  background-color:  rgba(60, 60, 60, 0.8);
+}
 
 
 

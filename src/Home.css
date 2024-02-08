@@ -14,7 +14,7 @@
     flex-wrap: wrap;
     z-index: 1;
     position: relative;
-    margin-top: -125px;
+    margin-top: -25px;
 
 }
 
@@ -83,7 +83,7 @@
 .poster-behind:hover{
     
     transition: all .3s ease;
-    top: -20px;
+    top: -40px;
     z-index: 1;
     transform: scale(1.3);
     
@@ -103,4 +103,3 @@
     cursor:grab;
     overflow: hidden;
 }
-

@@ -1,4 +1,7 @@
 import logo from './images/netflix-logo.png';
+
+import profileIcon from './images/profile-icon.jpg';
+
 import './App.css';
 import './Header.css'
 import './Home.css'
@@ -8,6 +11,7 @@ import movieImages from './movie-images';
 import { motion } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import MovieModal from './components/MovieModal';
+import BillboardVideo from './components/BillboardVideo';
 
 function App() {
   const Header = () => {
@@ -41,7 +45,24 @@ function App() {
           <a href="#">New & Popular</a>
           <a href="#">My List</a>
           <a href="#">Browse by Languages</a>
+
+
+          {/* <i className="ri-account-circle-fill"></i> */}
         </div>
+
+        <div className="user-icons">
+          
+          <i className="ri-search-line"></i>
+          <a className = "nav-kids" href="#">Kids</a>
+          <i className="ri-notification-2-line"></i>
+          <a href="#"><img src={profileIcon} /></a>
+
+
+
+
+        </div>
+
+
 
         {/* <div class="bx bx-menu" id="menu-icon"></div> */}
 
@@ -54,7 +75,9 @@ function App() {
 
     return (
       <div className="billboard-container">
-        <div className="billboard bbmovie"></div>
+        <div className="billboard">
+          <BillboardVideo />
+        </div>
         <div className="billboard-title billboard-logo"></div>
         <div className="billboard-description">
           If they hear you, they hunt you. A family must live in silence to avoid mysterious creatures that hunt by sound.
@@ -105,23 +128,23 @@ function App() {
 
                     <img src={image} alt="movie-image" />
                     <div style={{ position: 'relative', top: -90, left: 0, width: '100%', height: '100%' }}>
-                      
 
-                      
+
+
                       <div className="poster-behind">
-                      <img src={image} alt="movie-image" />
-                      <div style={{ position: 'relative', top: -90, left: 0, width: '100%', height: '100%' }}>
-                      <MovieModal />
+                        <img src={image} alt="movie-image" />
+                        <div style={{ position: 'relative', top: -90, left: 0, width: '100%', height: '100%' }}>
+                          <MovieModal />
+                        </div>
+
                       </div>
-                      
-                      </div>
-                      
+
                     </div>
 
 
                   </motion.div>
 
-                  
+
 
                 );
 
@@ -149,10 +172,10 @@ function App() {
                     <img src={image} alt="movie-image" />
                     <div style={{ position: 'relative', top: -90, left: 0, width: '100%', height: '100%' }}>
                       <MovieModal />
-                      
+
                     </div>
 
-                    
+
 
                   </motion.div>
                 );
