@@ -8,6 +8,7 @@ import './Home.css'
 import movieImages from './movie-images';
 
 
+
 import { motion } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import MovieModal from './components/MovieModal';
@@ -51,9 +52,9 @@ function App() {
         </div>
 
         <div className="user-icons">
-          
+
           <i className="ri-search-line"></i>
-          <a className = "nav-kids" href="#">Kids</a>
+          <a className="nav-kids" href="#">Kids</a>
           <i className="ri-notification-2-line"></i>
           <a href="#"><img src={profileIcon} /></a>
 
@@ -102,63 +103,22 @@ function App() {
   }
   const Mainview = () => {
 
-    const [width, setWidth] = useState(0);
-    const movieSlider = useRef();
-    useEffect(() => {
-      setWidth(2500);
-    }, []);
 
+
+ 
 
     return (
       <div className="content-container">
         <div className="section-title">
-          <h2>New Releases</h2>
-
-          <motion.div ref={movieSlider} className="movie-scroller" whileTap={{ cursor: "grabbing" }}>
-
-
-            <motion.div drag="x" dragConstraints={{
-              right: 25,
-              left: -width
-            }}
-              className="movie-card-1">
-              {movieImages.map(image => {
-                return (
-                  <motion.div className="poster" key={image}>
-
-                    <img src={image} alt="movie-image" />
-                    <div style={{ position: 'relative', top: -90, left: 0, width: '100%', height: '100%' }}>
-
-
-
-                      <div className="poster-behind">
-                        <img src={image} alt="movie-image" />
-                        <div style={{ position: 'relative', top: -90, left: 0, width: '100%', height: '100%' }}>
-                          <MovieModal />
-                        </div>
-
-                      </div>
-
-                    </div>
-
-
-                  </motion.div>
-
-
-
-                );
-
-              })}
-
-            </motion.div>
-          </motion.div>
-
-        </div>
+        <h2>Recently Added</h2>
+        <MovieModal/>
+          </div>
+       
 
         <div className="section-title">
           <h2>Top 10 Movies in the U.S Today</h2>
-          <motion.div ref={movieSlider} className="movie-scroller" whileTap={{ cursor: "grabbing" }}>
-
+          <MovieModal/>
+          {/* <motion.div ref={movieSlider} className="movie-scroller" whileTap={{ cursor: "grabbing" }}>
 
             <motion.div drag="x" dragConstraints={{
               right: 25,
@@ -171,32 +131,24 @@ function App() {
 
                     <img src={image} alt="movie-image" />
                     <div style={{ position: 'relative', top: -90, left: 0, width: '100%', height: '100%' }}>
-                      <MovieModal />
-
+                    
                     </div>
-
-
-
                   </motion.div>
                 );
               })}
             </motion.div>
 
-          </motion.div>
+          </motion.div> */}
         </div>
 
         <div className="section-title">
           <h2>Only on Netflix</h2>
-          <div className="movie-card-3">
-            <div className="movie-image"></div>
-          </div>
+          <MovieModal/>
         </div>
 
         <div className="section-title">
           <h2>Trending Now</h2>
-          <div className="movie-card-4">
-            <div className="movie-image"></div>
-          </div>
+          <MovieModal/>
         </div>
 
 

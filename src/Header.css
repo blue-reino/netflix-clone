@@ -3,14 +3,14 @@
   padding: 20px;
   z-index: 1000;
   width: 100%;
-  height: 70px;
+  height: 64px;
   display: flex;
 
   justify-content: start;
 
   /* background: linear-gradient(245.59deg, #8d01d8 0%, #ab0fff 28.53%, #46006c 75.52%); */
   /* background: rgb(60, 0, 98, 80%); */
-  transition: all .5s ease;
+  transition: all .8s ease;
   background: rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(10px);
 

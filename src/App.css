@@ -164,7 +164,12 @@
   background-color:  rgba(60, 60, 60, 0.8);
 }
 
+.videoPlayer {
 
+  display: flex;
+  flex-wrap: wrap;
+
+}
 
 .bbmovie{
  
