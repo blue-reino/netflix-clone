@@ -56,7 +56,7 @@ const movies = [
         id: 4,
         title: "Cars",
         image: carsImg,
-        videoSource: "https://example.com/cars.mp4",
+        videoSource: "https://vidsrc.to/embed/movie/385687",
         description: "Description for the movie Cars",
         misc: "misc for movie",
     },
