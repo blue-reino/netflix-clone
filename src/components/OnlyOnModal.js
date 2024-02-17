@@ -1,7 +1,6 @@
-
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import movies from '../movie-images'; // Import the movies array
+import movies from '../onlyonmovies'; // Import the movies array
 import { motion } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import '../Home.css';
@@ -26,7 +25,7 @@ function MoviePopup() {
   const [width, setWidth] = useState(0);
   const movieSlider = useRef();
   useEffect(() => {
-    setWidth(2550);
+    setWidth(800);
   }, []);
 
   return (
@@ -36,20 +35,20 @@ function MoviePopup() {
           right: 30,
           left: -width
         }}
-          className="movie-card-1" style={{ minWidth: '240rem' }}>
+          className="movie-card-1" style={{ width: '42rem' }}>
 
           {movies.map((movie) => (
             <div key={movie.id} className="posterregular" style={{ width: '100%' }}>
               <img src={movie.image}
                 alt={movie.title}
                 style={{
-                  boxShadow: '0px 4px 43px 10px rgba(0, 0, 0, 0.75)',
+                  // boxShadow: '0px 4px 43px 10px rgba(0, 0, 0, 0.75)',
                   top: 10,
                   position: 'relative'
                 }} />
 
               <button onClick={() => handleMovieSelect(movie)} className="watch-movie-btn" style={{ position: 'relative', top: -80 }}>
-                More Info
+              More Info
               </button>
             </div>
 

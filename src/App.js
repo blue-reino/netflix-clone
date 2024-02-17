@@ -5,72 +5,20 @@ import profileIcon from './images/profile-icon.jpg';
 import './App.css';
 import './Header.css'
 import './Home.css'
-import movieImages from './movie-images';
 
 
 
 import { motion } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import MovieModal from './components/MovieModal';
+import Top10MovieModal from './components/Top10MovieModal';
+import OnlyOnModal from './components/OnlyOnModal';
 import BillboardVideo from './components/BillboardVideo';
+import Header from './components/header';
+
 
 function App() {
-  const Header = () => {
-
-    const [navbar, setNavBar] = useState(false);
-
-    const changeBackground = () => {
-
-      if (window.scrollY >= 70) {
-        setNavBar(true);
-      } else {
-        setNavBar(false);
-      }
-
-    };
-
-    window.addEventListener('scroll', changeBackground);
-
-
-    return (
-
-      <header className={navbar ? 'header active' : 'header'}>
-
-        <a href="#" className="logo"><img src={logo} width="15%" /></a>
-
-        <div className="header_Nav">
-
-          <a href="#">Home</a>
-          <a href="#">TV Shows</a>
-          <a href="#">Movies</a>
-          <a href="#">New & Popular</a>
-          <a href="#">My List</a>
-          <a href="#">Browse by Languages</a>
-
-
-          {/* <i className="ri-account-circle-fill"></i> */}
-        </div>
-
-        <div className="user-icons">
-
-          <i className="ri-search-line"></i>
-          <a className="nav-kids" href="#">Kids</a>
-          <i className="ri-notification-2-line"></i>
-          <a href="#"><img src={profileIcon} /></a>
-
-
-
-
-        </div>
-
-
-
-        {/* <div class="bx bx-menu" id="menu-icon"></div> */}
-
-      </header>
-
-    );
-  }
+  
 
   const Billboard = () => {
 
@@ -117,7 +65,7 @@ function App() {
 
         <div className="section-title">
           <h2>Top 10 Movies in the U.S Today</h2>
-          <MovieModal/>
+          <Top10MovieModal/>
           {/* <motion.div ref={movieSlider} className="movie-scroller" whileTap={{ cursor: "grabbing" }}>
 
             <motion.div drag="x" dragConstraints={{
@@ -143,7 +91,7 @@ function App() {
 
         <div className="section-title">
           <h2>Only on Netflix</h2>
-          <MovieModal/>
+          <OnlyOnModal/>
         </div>
 
         <div className="section-title">

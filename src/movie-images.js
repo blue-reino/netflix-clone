@@ -21,8 +21,12 @@ const movies = [
         title: "Scream",
         image: screamImg,
         videoSource: "https://d35aw7d6ywlle7.cloudfront.net/scream1scene.mp4",
-        description: "A masked knife-wielding maniac is busy stalking the students of a highschool, killing them off one by one.",
-        misc: "R ‧ 1996 ‧ Horror/Mystery ‧ 1h 40m",
+        description: "A masked knife-wielding maniac is busy stalking the students of a high school, killing them off one by one.",
+        misc: (
+            <div>
+                <button style={{ backgroundColor: 'transparent', border: '1px solid white', cursor: 'default', color: 'whitesmoke' }}> R </button> ‧ 1996 ‧ Horror/Mystery ‧ 1h 40m
+            </div>
+        ),
     },
     {
         id: 2,
@@ -30,7 +34,11 @@ const movies = [
         image: scream2Img,
         videoSource: "https://d35aw7d6ywlle7.cloudfront.net/scream2scene.mp4",
         description: "Sydney and tabloid reporter Gale Weathers survived the events of the first Scream, but their nightmare isn't over. When two college students are murdered at a sneak preview of Stab, a movie based on the events from the first film, it's clear a copycat killer is on the loose.",
-        misc: "R  1997 ‧ Horror/Mystery ‧ 2 hours",
+        misc: (
+            <div>
+                <button style={{ backgroundColor: 'transparent', border: '1px solid white', cursor: 'default', color: 'whitesmoke' }}> R </button> ‧ 1997 ‧ Horror/Mystery ‧ 2 hours
+            </div>
+        ),
     },
     {
         id: 3,
@@ -38,7 +46,11 @@ const movies = [
         image: avengersImg,
         videoSource: "https://d35aw7d6ywlle7.cloudfront.net/avengersscene.mp4",
         description: "Adrift in space with no food or water, Tony Stark sends a message to Pepper Potts as his oxygen supply starts to dwindle. Meanwhile, the remaining Avengers -- Thor, Black Widow, Captain America and Bruce Banner -- must figure out a way to bring back their vanquished allies for an epic showdown with Thanos -- the evil demigod who decimated the planet and the universe",
-        misc: "PG-13 ‧ 2019 ‧ Action/Sci-fi ‧ 3h 2m",
+        misc: (
+            <div>
+                <button style={{ backgroundColor: 'transparent', border: '1px solid white', cursor: 'default', color: 'whitesmoke' }}> PG-13 </button> ‧ 2019 ‧ Action/Sci-fi ‧ 3h 2m
+            </div>
+        ),
     },
     {
         id: 4,
@@ -70,7 +82,11 @@ const movies = [
         image: interstellarImg,
         videoSource: "https://d35aw7d6ywlle7.cloudfront.net/interstellarscene.mp4",
         description: "In Earth's future, a global crop blight and second Dust Bowl are slowly rendering the planet uninhabitable. Professor Brand, a brilliant NASA physicist, is working on plans to save mankind by transporting Earth's population to a new home via a wormhole.",
-        misc: "PG-13 ‧ 2014 ‧ Sci-fi/Adventure ‧ 2h 49m",
+        misc: (
+            <div>
+                <button style={{ backgroundColor: 'transparent', border: '1px solid white', cursor: 'default', color: 'whitesmoke' }}> PG-13 </button> ‧ 2014 ‧ Sci-fi/Adventure ‧ 2h 49m
+            </div>
+        ),
     },
     {
         id: 8,
