@@ -1,0 +1,38 @@
+.AllMoviesContainer {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    
+
+}
+
+.AllMoviesTitle {
+    position: relative;
+    height: 60px;
+    margin-top: 5%;
+    margin-left: 2%;
+    
+}
+
+.AllMoviesTitle h2 {
+
+    color: whitesmoke;
+
+}
+
+@media (max-width: 1250px) {
+
+    .AllMoviesTitle{
+        margin-top: 10%;
+    }
+
+
+}
+
+@media (max-width: 610px) {
+    .AllMoviesTitle{
+        margin-top: 15%;
+    }
+
+}

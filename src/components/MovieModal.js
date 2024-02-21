@@ -9,6 +9,24 @@ import '../Home.css';
 
 
 function MoviePopup() {
+
+  const [shuffledMovies, setShuffledMovies] = useState([]);
+
+  // Function to shuffle the array
+  const shuffleArray = (array) => {
+      const shuffledArray = [...array];
+      for (let i = shuffledArray.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
+      }
+      return shuffledArray;
+  };
+
+  useEffect(() => {
+      // Shuffle the movies array when the component mounts
+      setShuffledMovies(shuffleArray(movies));
+  }, []);
+
   const [show, setShow] = useState(false);
   const [selectedMovie, setSelectedMovie] = useState(null); // State to store the selected movie
 
@@ -20,13 +38,13 @@ function MoviePopup() {
     setSelectedMovie(movie);
     handleShow(); // Show the modal when a movie is selected
   };
-
+  
 
 
   const [width, setWidth] = useState(0);
   const movieSlider = useRef();
   useEffect(() => {
-    setWidth(2550);
+    setWidth(2750);
   }, []);
 
   return (
@@ -38,7 +56,7 @@ function MoviePopup() {
         }}
           className="movie-card-1" style={{ minWidth: '240rem' }}>
 
-          {movies.map((movie) => (
+          {shuffledMovies.map((movie) => (
             <div key={movie.id} className="posterregular" style={{ width: '100%' }}>
               <img src={movie.image}
                 alt={movie.title}
@@ -67,15 +85,27 @@ function MoviePopup() {
         <Modal.Body style={{background: 'rgb(20,20,20)', color: 'white', padding: '30px'}}>
           {selectedMovie && (
             <>
+            
             <p>{selectedMovie.misc}</p>
-              <video id="videoPlayer" style=
+              {/* <video id="videoPlayer" style=
               {{
                 marginLeft: '60px', 
                 margin: '20px 0 20px 0' 
               }} 
               width='600px' controls muted autoPlay={false}>
                 <source src={selectedMovie.videoSource} />
-              </video>
+              </video> */}
+
+              <iframe
+                      title="Movie Player"
+                      width="740"
+                      height="450"
+                      style={{border:'none'}}
+                      src={selectedMovie.videoSource}
+                      allowFullScreen
+               ></iframe>
+
+
               <p>{selectedMovie.description}</p>
 
             </>

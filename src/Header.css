@@ -107,6 +107,11 @@
 }
 
 
+.header_Nav a.active {
+
+  color: rgb(255, 255, 255, .5);
+}
+
 
 .ri-notification-2-line {
 

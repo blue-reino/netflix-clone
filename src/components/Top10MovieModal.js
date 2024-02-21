@@ -13,6 +13,25 @@ import '../Home.css';
 
 
 function MoviePopup() {
+
+  const [shuffledMovies, setShuffledMovies] = useState([]);
+
+  // Function to shuffle the array
+  const shuffleArray = (array) => {
+      const shuffledArray = [...array];
+      for (let i = shuffledArray.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
+      }
+      return shuffledArray;
+  };
+
+  useEffect(() => {
+      // Shuffle the movies array when the component mounts
+      setShuffledMovies(shuffleArray(movies));
+  }, []);
+
+
   const [show, setShow] = useState(false);
   const [selectedMovie, setSelectedMovie] = useState(null); // State to store the selected movie
 
@@ -44,7 +63,7 @@ function MoviePopup() {
             width: '120px',height: '220px', gap: '7rem'
           }}>
 
-          {movies.map((movie, index) => (
+          {shuffledMovies.map((movie, index) => (
             <div key={movie.id} className="poster" style={{ width: '100%' }}>
               <img src={movie.image}
                 alt={movie.title}
