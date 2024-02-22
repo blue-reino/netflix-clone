@@ -34,7 +34,7 @@
 .section-title h2 {
     font-size: 23px;
     font-weight: bold;
-    margin: 1px 35px 5px 35px;
+    margin: 1px 20px 5px 35px;
     color: white;
     font-family: 'poppins', sans-serif;
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.74);
@@ -85,11 +85,11 @@
 }
 
 .posterregular {
-    width: 45rem;
+    width: 40rem;
 
     height: 140px;
     background-size: cover;
-    margin: 5px;
+    margin: 3px;
     border-radius: 5px;
 
 }
