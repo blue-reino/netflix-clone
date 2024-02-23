@@ -94,7 +94,7 @@ function Home() {
             <h2>Recently Added</h2>
             <motion.a href='/AllMovies'
               style=
-              {{ color: 'deepskyblue', left: '-20px' }}
+              {{ color: 'deepskyblue', marginTop: '4px', left: '-20px' , fontSize: '19px' }}
               whileHover="animate"
               variants={fadeInAnimationVariants}>Explore All<i class="ri-arrow-right-s-line" style={{ fontSize: '18px' }}></i></motion.a>
           </div>
@@ -137,7 +137,7 @@ function Home() {
             <h2>Only on Netflix</h2>
             <motion.a href='/AllMovies'
               style=
-              {{ color: 'deepskyblue', left: '-20px' }}
+              {{ color: 'deepskyblue', marginTop: '4px', left: '-20px' , fontSize: '19px'}}
               whileHover="animate"
               variants={fadeInAnimationVariants}>Explore All<i class="ri-arrow-right-s-line" style={{ fontSize: '18px' }}></i></motion.a>
           </div>
@@ -153,7 +153,7 @@ function Home() {
             <h2>Trending Now</h2>
             <motion.a href='/AllMovies'
               style=
-              {{ color: 'deepskyblue', left: '-20px' }}
+              {{ color: 'deepskyblue', marginTop: '4px', left: '-20px' , fontSize: '19px' }}
               whileHover="animate"
               variants={fadeInAnimationVariants}>Explore All<i class="ri-arrow-right-s-line" style={{ fontSize: '18px' }}></i></motion.a>
           </div>

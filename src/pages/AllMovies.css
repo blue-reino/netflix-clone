@@ -11,12 +11,14 @@
     position: relative;
     height: 60px;
     margin-top: 5%;
-    margin-left: 2%;
+    
     
 }
 
-.AllMoviesTitle h2 {
 
+.AllMoviesTitle h2 {
+    text-align: center;
+    font-size: 60px;
     color: whitesmoke;
 
 }

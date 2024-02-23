@@ -67,7 +67,7 @@ const VideoPlayer = ({ src }) => {
 
   return (
     <div className="video-player" style={{ position: 'relative' }}>
-      <video ref={videoRef} src={src} muted={muted} autoPlay={true} controls={false} style={{ width: '100%' }} />
+      <video ref={videoRef} src={src} muted={muted} autoPlay={true} controls={false} style={{ width: '100%', height: '80%' }} />
       <motion.button style={{ position: 'relative', top: '-300px', left: '90%', transform: 'translate(-50%, -50%)'}} onClick={ended ? restartVideo : toggleMute} variants={fadeInAnimationVariants}
       initial="initial"
       animate="animate"

@@ -38,10 +38,10 @@ function AllMoviesComponenet() {
 
     return (
         <>
-            <div style={{ display: 'flex', justifyContent: 'space-evenly', flexWrap: 'wrap', marginTop: 40, marginLeft: -20 }}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', marginTop: 40}}>
 
                 {shuffledMovies.map((movie) => (
-                    <div key={movie.id} className="postercombined" style={{ width: '15.5%', display: 'flex', justifyContent: 'center', flexWrap: 'wrap' }}>
+                    <div key={movie.id} className="postercombined" style={{ width: '14.5%', display: 'flex', justifyContent: 'center', flexWrap: 'wrap' }}>
                         <img src={movie.image}
                             alt={movie.title}
                             style={{
@@ -50,7 +50,7 @@ function AllMoviesComponenet() {
                                 position: 'relative'
                             }} />
 
-                        <button onClick={() => handleMovieSelect(movie)} className="watch-movie-btn" style={{ position: 'relative', top: -93 }}>
+                        <button onClick={() => handleMovieSelect(movie)} className="watch-movie-btn" style={{ position: 'relative', top: -93}}>
                             More Info
                         </button>
                     </div>

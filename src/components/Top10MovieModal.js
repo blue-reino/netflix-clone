@@ -49,22 +49,22 @@ function MoviePopup() {
   const [width, setWidth] = useState(0);
   const movieSlider = useRef();
   useEffect(() => {
-    setWidth(900);
+    setWidth(580);
   }, []);
 
   return (
     <>
       <motion.div ref={movieSlider} className="movie-scroller" whileTap={{ cursor: "grabbing" }}>
         <motion.div drag="x" dragConstraints={{
-          right: 95,
+          right: 150,
           left: -width
         }}
           className="movie-card-1" style={{
-            width: '120px',height: '220px', gap: '7rem'
+            width: '130px',height: '230px', gap: '7rem'
           }}>
 
           {shuffledMovies.map((movie, index) => (
-            <div key={movie.id} className="poster" style={{ width: '100%' }}>
+            <div key={movie.id} className="poster">
               <img src={movie.image}
                 alt={movie.title}
                 style={{
@@ -72,7 +72,7 @@ function MoviePopup() {
                   top: 10,
                   position: 'relative',
                   ...(index === 9 && {
-                    left: '30px'
+                    left: '70px'
                   })
                 }} />
 
@@ -82,17 +82,17 @@ function MoviePopup() {
                   style=
                   {{
                     position: 'absolute',
-                    width: '185%',
+                    width: '215%',
                     height: 'auto',
-                    top: '-19px',
+                    top: '-20px',
                     left: '-120%',
                     transition: 'none',
                     zIndex: -1,
                     ...(index === 9 && {
-                      left: '-118px'
+                      left: '-100px'
                     }),
                     ...(index === 0 && {
-                      left: '-135px'
+                      left: '-163px'
                     })
 
 
@@ -106,7 +106,7 @@ function MoviePopup() {
               <button onClick={() => handleMovieSelect(movie)} className="top-10-watch-movie-btn" 
               style={{ 
                 position: 'relative', 
-                top: -90 ,
+                top: -100 ,
                 ...(index === 9 && {
                   left: '30px'
                 }),

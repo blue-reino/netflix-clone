@@ -53,10 +53,10 @@ function MoviePopup() {
           right: 30,
           left: -width
         }}
-          className="movie-card-1" style={{ width: '42rem' }}>
+          className="movie-card-1">
 
           {shuffledMovies.map((movie) => (
-            <div key={movie.id} className="posterregular" style={{ width: '100%' }}>
+            <div key={movie.id} className="posterregular">
               <img src={movie.image}
                 alt={movie.title}
                 style={{
@@ -65,7 +65,7 @@ function MoviePopup() {
                   position: 'relative'
                 }} />
 
-              <button onClick={() => handleMovieSelect(movie)} className="watch-movie-btn" style={{ position: 'relative', top: -80 }}>
+              <button onClick={() => handleMovieSelect(movie)} className="watch-movie-btn" style={{ position: 'relative', top: -90 , width: '304px'}}>
               More Info
               </button>
             </div>
