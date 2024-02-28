@@ -3,9 +3,11 @@ import Modal from 'react-bootstrap/Modal';
 import movies from '../allmoviescompiled'; // Import the movies array
 import { useRef, useEffect, useState } from "react";
 import '../Home.css';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function AllMoviesComponenet() {
+
+    const [search, setSearch] = useState('');
 
     const [shuffledMovies, setShuffledMovies] = useState([]);
 
@@ -38,9 +40,23 @@ function AllMoviesComponenet() {
 
     return (
         <>
-            <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', marginTop: 40}}>
+            <div class="input-group rounded" style={{ width: '50%' }}>
+                <input type="search" 
+                onChange={(e) =>setSearch(e.target.value)} class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+                <span class="input-group-text border-0" id="search-addon">
+                    <i class="fas fa-search"></i>
+                </span>
+            </div>
 
-                {shuffledMovies.map((movie) => (
+            <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', marginTop: 40 }}>
+
+
+
+                {movies.filter((movie) => {
+                    return search.toLowerCase() === '' ? movie :
+                     movie.title.toLowerCase().includes(search);
+                })
+                .map((movie) => (
                     <div key={movie.id} className="postercombined" style={{ width: '14.5%', display: 'flex', justifyContent: 'center', flexWrap: 'wrap' }}>
                         <img src={movie.image}
                             alt={movie.title}
@@ -50,7 +66,7 @@ function AllMoviesComponenet() {
                                 position: 'relative'
                             }} />
 
-                        <button onClick={() => handleMovieSelect(movie)} className="watch-movie-btn" style={{ position: 'relative', top: -93}}>
+                        <button onClick={() => handleMovieSelect(movie)} className="watch-movie-btn" style={{ position: 'relative', top: -93 }}>
                             More Info
                         </button>
                     </div>
