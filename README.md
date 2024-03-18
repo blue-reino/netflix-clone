@@ -14,9 +14,9 @@ Simply run npm start in the source folder, after installing React
   
 * Framer-Motion: For animations
 
-* Bootstarp: For some basic styling
+* Bootstrap: For some basic styling
 
-* Remix Icon: Fr some design icons
+* Remix Icon: For some design icons
 
 * Amazon AWS Cloud Storage: For the billboard images
 
