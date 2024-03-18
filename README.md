@@ -35,7 +35,7 @@ Simply run npm start in the source folder, after installing React
 * For the hero, featured movie player, I created a custom video player that resembles Netflix. The clip of the featured movie will play, it will be muted, with a button that allows you to unmute and mute. After the clip is finished playing it stops, and the mute/unmute button switches to a restart button, where the user can rewatch the clip. 
 * I then began working on the "All Movies" section. I created a new Array and imported all the other movie arrays. I then used a similar logic to the carousel to map the movies, except this time I got rid of sliding animation and just displayed everything on the user screen. I used some basic styling such as flexbox to make sure everything fit.
 * Here, I learned about React Routing, this made it where the user can go to certain pages without having to refresh their entire screen, as well as have a "active" page.
-* I finnaly tried to implement a search filter to the "All Movies" section, however, I ran into some issues and decided to take a break.
+* I finally tried to implement a search filter to the "All Movies" section, however, I ran into some issues and decided to take a break.
 * Also features some basic mobile support, however, a lot of work is needed.
   
 # Future Plans
