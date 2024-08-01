@@ -221,7 +221,20 @@
   background: rgba(255, 0, 0, 0.5);
 }
 
-.top-10-watch-movie-btn:not(:hover) {
+.top-10-watch -movie-btn:not(:hover) {
 
   transition: all .3s ease;
+}
+
+@media (max-width: 1800px) {
+
+  .billboard-description{
+    left: 20.5%;
+  }
+
+ 
+
+  .billboard-info-btn{
+    left: 12.5%;
+  }
 }

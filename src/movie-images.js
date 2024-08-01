@@ -16,7 +16,7 @@ import ff8Img from './images/ff8.png';
 import fftokyoImg from './images/fftokyo.png';
 import borning3 from './images/borning.jpg';
 
-let streamURL = 'https://vidsrc.to/embed/movie/';
+let streamURL = 'https://vidsrc.xyz/embed/movie/';
 
 const movies = [
     {

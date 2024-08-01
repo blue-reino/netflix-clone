@@ -72,7 +72,7 @@ function AllMoviesComponenet() {
                     </div>
 
                 ))}
-
+    
             </div>
 
             <Modal show={show} onHide={handleClose} animation={true} size="lg">
