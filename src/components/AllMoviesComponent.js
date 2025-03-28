@@ -1,17 +1,15 @@
+import { useState, useEffect, useMemo } from "react";
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import movies from '../allmoviescompiled'; // Import the movies array
-import { useRef, useEffect, useState } from "react";
 import '../Home.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-function AllMoviesComponenet() {
-
+function AllMoviesComponent() {
     const [search, setSearch] = useState('');
-
     const [shuffledMovies, setShuffledMovies] = useState([]);
 
-    // Function to shuffle the array
+    // Function to shuffle the movies array
     const shuffleArray = (array) => {
         const shuffledArray = [...array];
         for (let i = shuffledArray.length - 1; i > 0; i--) {
@@ -22,57 +20,63 @@ function AllMoviesComponenet() {
     };
 
     useEffect(() => {
-        // Shuffle the movies array when the component mounts
+        // Shuffle the movies array only once on mount
         setShuffledMovies(shuffleArray(movies));
     }, []);
 
+    // Memoized filtered movies to prevent unnecessary re-renders
+    const filteredMovies = useMemo(() => {
+        return search.trim() === ''
+            ? shuffledMovies // Show all movies when search is empty
+            : shuffledMovies.filter((movie) => 
+                movie.title.toLowerCase().includes(search.toLowerCase())
+            );
+    }, [search, shuffledMovies]);
+
     const [show, setShow] = useState(false);
-    const [selectedMovie, setSelectedMovie] = useState(null); // State to store the selected movie
+    const [selectedMovie, setSelectedMovie] = useState(null);
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
-    // Function to handle when a movie is selected
     const handleMovieSelect = (movie) => {
         setSelectedMovie(movie);
-        handleShow(); // Show the modal when a movie is selected
+        handleShow();
     };
 
     return (
         <>
-            <div class="input-group rounded" style={{ width: '50%' }}>
-                <input type="search" 
-                onChange={(e) =>setSearch(e.target.value)} class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-                <span class="input-group-text border-0" id="search-addon">
-                    <i class="fas fa-search"></i>
+            <div className="input-group rounded" style={{ width: '50%' }}>
+                <input 
+                    type="search"
+                    value={search}
+                    onChange={(e) => setSearch(e.target.value)}
+                    className="form-control rounded"
+                    placeholder="Search"
+                    aria-label="Search"
+                    aria-describedby="search-addon"
+                />
+                <span className="input-group-text border-0" id="search-addon">
+                    <i className="fas fa-search"></i>
                 </span>
             </div>
 
             <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', marginTop: 40 }}>
-
-
-
-                {movies.filter((movie) => {
-                    return search.toLowerCase() === '' ? movie :
-                     movie.title.toLowerCase().includes(search);
-                })
-                .map((movie) => (
+                {filteredMovies.map((movie) => (
                     <div key={movie.id} className="postercombined" style={{ width: '14.5%', display: 'flex', justifyContent: 'center', flexWrap: 'wrap' }}>
-                        <img src={movie.image}
+                        <img 
+                            src={movie.image}
                             alt={movie.title}
                             style={{
                                 boxShadow: '0px 4px 43px 10px rgba(0, 0, 0, 0.75)',
-
                                 position: 'relative'
-                            }} />
-
+                            }} 
+                        />
                         <button onClick={() => handleMovieSelect(movie)} className="watch-movie-btn" style={{ position: 'relative', top: -93 }}>
                             More Info
                         </button>
                     </div>
-
                 ))}
-    
             </div>
 
             <Modal show={show} onHide={handleClose} animation={true} size="lg">
@@ -82,9 +86,7 @@ function AllMoviesComponenet() {
                 <Modal.Body style={{ background: 'rgb(20,20,20)', color: 'white', padding: '30px' }}>
                     {selectedMovie && (
                         <>
-
                             <p>{selectedMovie.misc}</p>
-
                             <iframe
                                 title="Movie Player"
                                 width="740"
@@ -93,10 +95,7 @@ function AllMoviesComponenet() {
                                 src={selectedMovie.videoSource}
                                 allowFullScreen
                             ></iframe>
-
-
                             <p>{selectedMovie.description}</p>
-
                         </>
                     )}
                 </Modal.Body>
@@ -104,16 +103,10 @@ function AllMoviesComponenet() {
                     <Button variant="primary" onClick={handleClose}>
                         Close
                     </Button>
-
-                    {/* <Button variant="primary" onClick={handleWatchMovie}>
-            Watch Movie
-          </Button> */}
                 </Modal.Footer>
             </Modal>
         </>
-    )
-
-
+    );
 }
 
-export default AllMoviesComponenet;
+export default AllMoviesComponent;
